@@ -10,5 +10,16 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-item>
+        <ion-label>Select All</ion-label>
+        <ion-checkbox color="dark" [(ngModel)]="selectAll" (ionChange)="updateAll()"></ion-checkbox>
+      </ion-item>
 
+  <div *ngFor="let plane of planes">
+    <img src="assets/img/planes/{{plane.id}}.png">
+    <ion-item>
+      <ion-label>{{ plane.name }}</ion-label>
+      <ion-checkbox color="dark" [(ngModel)]="plane.ionicCheckbox"></ion-checkbox>
+    </ion-item>
+  </div>
 </ion-content>
